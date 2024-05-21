@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Popup with Blurred Background</title>
+<style>
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: none;
+}
+
+.popup-content {
+  text-align: center;
+  position: relative;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+  backdrop-filter: blur(5px);
+}
+
+.popup.active,
+#overlay.active {
+  display: block;
+}
+
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #666;
+}
+
+.close-popup:hover {
+  color: #333;
+}
+
+</style>
+</head>
+<body>
+
+<a href="#" class="popup-trigger" data-popup="popup1">Open Popup 1</a>
+<a href="#" class="popup-trigger" data-popup="popup2">Open Popup 2</a>
+<a href="#" class="popup-trigger" data-popup="popup3">Open Popup 3</a>
+
+<div id="popup1" class="popup">
+  <div class="popup-content">
+    <span class="close-popup">×</span>
+    <h2>Popup 1</h2>
+    <p>This is the content of popup 1.</p>
+  </div>
+</div>
+
+<div id="popup2" class="popup">
+  <div class="popup-content">
+    <span class="close-popup">×</span>
+    <h2>Popup 2</h2>
+    <p>This is the content of popup 2.</p>
+  </div>
+</div>
+
+<div id="popup3" class="popup">
+  <div class="popup-content">
+    <span class="close-popup">×</span>
+    <h2>Popup 3</h2>
+    <p>This is the content of popup 3.</p>
+  </div>
+</div>
+
+<div id="overlay"></div>
+
+<script> 
+    document.addEventListener('DOMContentLoaded', function() {
+  const triggers = document.querySelectorAll('.popup-trigger');
+  const overlays = document.getElementById('overlay');
+  const popups = document.querySelectorAll('.popup');
+
+  triggers.forEach(function(trigger) {
+    trigger.addEventListener('click', function() {
+      const popupId = this.getAttribute('data-popup');
+      const popup = document.getElementById(popupId);
+      popup.classList.add('active');
+      overlays.classList.add('active');
+    });
+  });
+
+  overlays.addEventListener('click', function() {
+    popups.forEach(function(popup) {
+      popup.classList.remove('active');
+    });
+    this.classList.remove('active');
+  });
+
+  const closeButtons = document.querySelectorAll('.close-popup');
+
+  closeButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      const popup = this.closest('.popup');
+      popup.classList.remove('active');
+      overlays.classList.remove('active');
+    });
+  });
+});
+
+</script>
+</body>
+</html>

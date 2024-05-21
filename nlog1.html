@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="blog1.css">
+    <script src="https://kit.fontawesome.com/dcd5ea563e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="header">    
+        <div class="container">
+            <nav>
+                <img src="images/2.png" alt="logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#poems">Poems</a></li>
+                    <li><a href="index.html#blogs">Blogs</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+           
+        </div>
+        <div class="bkg">
+            <div class="overlay">
+                 <div class="header-text">
+                    <p>MUSIC BLOG</p>
+                    <h1>A Harmony <span> from </span> Him and H.E.R.</h1>
+                    <p>My Song Cover of the song Best Part</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- --------about------- -->
+    <section id="blog-section">
+        <div class="blog-container">
+            <div class="blog-main-content">
+                <div class="blog-header">
+                    <div class="blog-header-img">
+                        <img src="images/title-image3.jpg" alt="" class="image-blog">
+                    </div>   
+                    <div class="blog-header-text">
+                        <h1 class="blog-header-title">Best Part<br> By: Daniel Caesar and H.E.R.</h1>
+                        <p>"Best Part" encapsulates the profound depth of love the singer harbors for their partner, expressed through its simplicity and heartfelt melody. It's a poignant ode to the cherished moments shared, emphasizing the significance of the beloved individual in the singer's life. The song beautifully captures the essence of love's intensity, portraying it as a treasure to be cherished and celebrated.</p>
+                    </div>
+                </div>
+                <div class="blog-paragraph">
+                    <h1 class="blog-title">Artist</h1>
+                    <div class="blog-header">
+                        <div class="blog-header-img1">
+                            <img src="images/artist1.jpg" alt="" class="image-blog">
+                        </div>   
+                        <div class="blog-header-text">
+                            <h1 class="blog-header-title">Daniel Caesar</h1>
+                            <p>Ashton Dumar Norwill Simmonds(born April 5, 1995), known professionally as Daniel Caesar, is a Canadian singer and songwriter. After independently building a following through the release of two critically acclaimed EPs, Praise Break (2014) and Pilgrim's Paradise (2015), Caesar released his debut studio album, Freudian, in August 2017, which garnered widespread critical acclaim.[5] He released his second studio album, Case Study 01, in June 2019. In March 2021, Caesar was featured alongside Giveon on Justin Bieber's single "Peaches", his first number-one song on the US Billboard Hot 100. Caesar released his third studio album, Never Enough, in April 2023 as his first release under Republic Records.</p>
+                        </div>
+                    </div>
+                    <div class="blog-header">
+                        <div class="blog-header-img2">
+                            <img src="images/artist2.jpg" alt="" class="image-blog">
+                        </div>   
+                        <div class="blog-header-text">
+                            <h1 class="blog-header-title">H.E.R.</h1>
+                            <p>Gabriella Sarmiento Wilson (born June 27, 1997), known professionally as H.E.R. (pronounced "her", acronym for "Having Everything Revealed"), is an American R&B singer, songwriter and guitarist. She has won an Academy Award, a Children's and Family Emmy Award, and five Grammy Awards, along with nominations for a Golden Globe Award, three American Music Awards, and four Billboard Music Awards.</p>
+                        </div>
+                    </div>
+                    <h1 class="blog-title">Album this song appear</h1>
+                    <p class="blog-description">Both Daniel Caesar and H.E.R. each featured "Best Part" on their respective albums, with Daniel Caesar including it on his album "Freudian" under the title "Best Part (feat. H.E.R.)," while H.E.R. included it on her self-titled album "H.E.R." as "Best Part (feat. Daniel Caesar)." This collaborative effort showcased the song's universal appeal and the seamless blend of their distinct musical styles, captivating listeners with its emotive lyrics and soulful melodies across both projects. Through this dual release, "Best Part" became a standout track, further solidifying its status as a modern classic in the realm of love ballads.
+                    </p>
+                     <div class="image-group-list">
+                        <div>
+                            <img src="images/albumpic1.jpg" class="blog-image">
+                        </div>
+                        <div>
+                            <img src="images/albumpic2.jpg" class="blog-image">
+                        </div>  
+                    </div>
+                    <h1 class="blog-title">Why I Love This Song</h1>
+                    <p class="blog-description">I chose to cover "Best Part" because it resonates deeply with me on a personal level. The song's poignant lyrics and soulful melody speak to the profound depth of love and appreciation for a partner, capturing the essence of what it means to cherish someone wholeheartedly. Its simplicity yet profound emotional impact is something I connect with deeply, as it reflects the kind of love I aspire to experience and express in my own life. Moreover, the collaboration between Daniel Caesar and H.E.R. brings a unique dynamic to the song, blending their distinct styles seamlessly and creating a musical masterpiece that moves me every time I hear it. As I cover this song, I hope to convey the same sense of heartfelt emotion and sincerity that it evokes in me, sharing a piece of my own journey and connection to the power of love through music.
+                    </p>
+                    <h1>My Video</h1>
+                    <div class="ytvideo-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/watch?v=S2GqjLMZA84" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; Trippings 2024. All Rights Reserved.</p>
+    </footer>
+</body>
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script> 
+
+
+</html>
